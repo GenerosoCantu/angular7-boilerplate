@@ -1,0 +1,55 @@
+<section class="signup-form container">
+  <h2>Handling Unit 1/3</h2>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+    <div fxLayout="column" fxFlex.gt-xs="33%" fxHide.xs fxLayoutGap="20px">
+
+      <app-left-nav></app-left-nav>
+
+    </div>
+
+    <div fxLayout="column" fxFlex.gt-xs="66%" fxFlex.xs="100%" fxLayoutGap="20px">
+
+      <mat-form-field>
+        <input type="text" matInput placeholder="Your name" ngModel name="fullname" fullname required
+          #fullnameInput="ngModel">
+        <mat-error *ngIf="fullnameInput.hasError('required')">Field must not be empty.</mat-error>
+        <mat-error *ngIf="!fullnameInput.hasError('required')">Name is invalid.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="email" matInput placeholder="Your email" ngModel name="email" email required #emailInput="ngModel">
+        <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty.</mat-error>
+        <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Your birthdate" [matDatepicker]="picker" [max]="maxDate" ngModel name="birthdate"
+          required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text" matInput placeholder="Your company" ngModel name="company" company required
+          #companyInput="ngModel">
+        <mat-error *ngIf="companyInput.hasError('required')">Field must not be empty.</mat-error>
+        <mat-error *ngIf="!companyInput.hasError('required')">Company is invalid.</mat-error>
+      </mat-form-field>
+
+      <div fxFlex="100%" [fxLayout]="direction" fxLayoutGap="20px">
+
+        <div fxFlex.gt-sm="50%" fxFlex.ls-md="100%" class="pad-bottom">
+          <mat-checkbox ngModel name="agree" required color="primary">Agree to Terms and Conditions.
+          </mat-checkbox>
+        </div>
+        <div fxFlex.gt-sm="50%" fxFlex.ls-md="100%" class="pad-bottom">
+          <button fxFlex="45%" type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
+        </div>
+
+      </div>
+
+    </div>
+  </form>
+</section>

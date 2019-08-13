@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -7,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'fedexDg7';
+  title = 'Dangerous Goods';
+
+  constructor(public translate: TranslateService) {
+    translate.addLangs(['en', 'es']);
+    translate.setDefaultLang('es');
+
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|es/) ? browserLang : 'es');
+    //translate.use('es');
+  }
 }

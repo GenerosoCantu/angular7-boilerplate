@@ -11,7 +11,8 @@ import { NgForm } from '@angular/forms';
 export class Page1Component implements OnInit {
   maxDate;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.maxDate = new Date();

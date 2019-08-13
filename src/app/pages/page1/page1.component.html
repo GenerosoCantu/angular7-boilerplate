@@ -12,14 +12,14 @@
     <div fxLayout="column" fxFlex.gt-xs="66%" fxFlex.xs="100%" fxLayoutGap="20px">
 
       <mat-form-field>
-        <input type="text" matInput placeholder="Your name" ngModel name="fullname" fullname required
+        <input type="text" matInput placeholder="{{ 'PAGE1.YOUR_NAME' | translate }}" ngModel name="fullname" fullname required
           #fullnameInput="ngModel">
         <mat-error *ngIf="fullnameInput.hasError('required')">Field must not be empty.</mat-error>
         <mat-error *ngIf="!fullnameInput.hasError('required')">Name is invalid.</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input type="email" matInput placeholder="Your email" ngModel name="email" email required #emailInput="ngModel">
+        <input type="email" matInput placeholder="{{ 'PAGE1.YOUR_EMAIL' | translate }}" ngModel name="email" email required #emailInput="ngModel">
         <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty.</mat-error>
         <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid.</mat-error>
       </mat-form-field>
@@ -32,7 +32,7 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input type="text" matInput placeholder="Your company" ngModel name="company" company required
+        <input type="text" matInput placeholder="{{ 'PAGE1.YOUR_COMPANY' | translate }}" ngModel name="company" company required
           #companyInput="ngModel">
         <mat-error *ngIf="companyInput.hasError('required')">Field must not be empty.</mat-error>
         <mat-error *ngIf="!companyInput.hasError('required')">Company is invalid.</mat-error>

@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./fedex-styles.css";
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  color:#333;
+}
+
+.container {
+  max-width: 970px;
+  margin: 0 auto;
+  padding: 10px 10px;
+  margin-bottom: 60px;
+}
+
+
+/* #3f51b5 --> #4d148c */
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Roboto-Light';
+}
+h1 {
+  font-size: 3.5rem;
+}
+h2 {
+  font-size: 2.8rem;
+}
+h3 {
+  font-size: 2.2rem;
+}
+h4 {
+  font-size: 1.9rem;
+}
+h5 {
+  font-size: 1.6rem;
+}
+
+.fex-logo {
+  display: block;
+  width: 72px;
+  height: 20px;
+  background: no-repeat url(./assets/fex_Logo.png);
+  background-size: 72px 20px;;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./assets/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url(./assets/Roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url(./assets/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto-Italic';
+  src: url(./assets/Roboto/Roboto-Italic.ttf);
+}

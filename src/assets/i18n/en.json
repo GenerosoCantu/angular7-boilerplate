@@ -1,0 +1,11 @@
+{
+  "HOME": {
+    "TITLE": "Hello Angular with ngx-translate!",
+    "SELECT": "Change language"
+  },
+  "PAGE1": {
+    "YOUR_NAME": "Your name",
+    "YOUR_EMAIL": "Your email",
+    "YOUR_COMPANY": "Your company"
+  }
+}

@@ -1,0 +1,25 @@
+.container h2 {
+  text-align: center;
+}
+
+app-left-nav {
+  display: block;
+  margin-right: 40px
+}
+
+mat-form-field {
+  display: block;
+}
+
+mat-checkbox {
+  display: block;
+}
+
+button {
+  display: block;
+  max-width: 100% !important;
+}
+
+.pad-bottom {
+  padding-bottom: 20px;
+}

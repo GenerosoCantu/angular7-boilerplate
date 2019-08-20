@@ -1,0 +1,27 @@
+.container {
+  padding: 0 10px;
+}
+.zero {
+  background-color: red;
+}
+
+.two_one {
+  background-color: #ccc;
+}
+
+.two_two {
+  background-color: #eee;
+}
+
+.two_three {
+  background-color: #bbb;
+}
+
+.one {
+  background-color: #999;
+}
+
+
+.three {
+  background-color: #aaa;
+}

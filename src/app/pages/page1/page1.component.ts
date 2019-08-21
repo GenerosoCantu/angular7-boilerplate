@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+import { User } from '../../models/user.model';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -9,11 +10,17 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./page1.component.css']
 })
 export class Page1Component implements OnInit {
+  user: User = {
+    id: null,
+    name: '',
+    email: '',
+    dob: '',
+    company: ''
+  };
   maxDate;
 
   constructor(private userService: UserService) {
-    console.log('Page 1 constructor')
-    this.userService.getUser(1).subscribe(user => { console.log(user); });
+    this.userService.getUser(1).subscribe(user => this.user = user);
   }
 
   ngOnInit() {
@@ -22,7 +29,7 @@ export class Page1Component implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-
+    this.userService.saveUser(this.user).subscribe();
   }
 
 }

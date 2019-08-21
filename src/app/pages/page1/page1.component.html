@@ -11,7 +11,49 @@
 
     <div fxLayout="column" fxFlex.gt-xs="66%" fxFlex.xs="100%" fxLayoutGap="20px">
 
-      <mat-form-field>
+      <div class="fxg-field">
+        <input type="text" matInput [(ngModel)]="user.name" name='name' #nameInput="ngModel" required
+          class="fxg-field__input-text fxg-field__input--required" aria-required="true">
+        <span class="fxg-field__placeholder fxg-field__floating-placeholder">{{ 'PAGE1.YOUR_NAME' | translate }}</span>
+        <mat-error *ngIf="nameInput.hasError('required')">Field must not be empty.</mat-error>
+        <!-- <mat-error *ngIf="!nameInput.hasError('required')">Name is invalid.</mat-error> -->
+      </div>
+
+      <div class="fxg-field">
+        <input type="text" matInput [(ngModel)]="user.email" name='email' #emailInput="ngModel" required
+          class="fxg-field__input-text fxg-field__input--required" aria-required="true">
+        <span class="fxg-field__placeholder fxg-field__floating-placeholder">{{ 'PAGE1.YOUR_EMAIL' | translate }}</span>
+        <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty.</mat-error>
+        <!-- <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid.</mat-error> -->
+      </div>
+
+      <div class="fxg-field">
+        <!-- <input type="text" matInput [(ngModel)]="user.email" name='email' #emailInput="ngModel" required
+          class="fxg-field__input-text fxg-field__input--required" aria-required="true"> -->
+
+        <input matInput placeholder="Your birthdate" [(ngModel)]="user.dob" name='dob' required [matDatepicker]="picker"
+          [max]="maxDate" class="fxg-field__input-text fxg-field__input--required" aria-required="true">
+        <span class="fxg-field__placeholder fxg-field__floating-placeholder">Your birthdate</span>
+
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+
+      <div class="fxg-field">
+        <!-- <input type="text" matInput [(ngModel)]="user.email" name='email' #emailInput="ngModel" required
+          class="fxg-field__input-text fxg-field__input--required" aria-required="true">
+        
+        <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty.</mat-error> -->
+
+        <input type="text" matInput [(ngModel)]="user.company" #companyInput="ngModel" name="company" company required
+          class="fxg-field__input-text fxg-field__input--required">
+        <span
+          class="fxg-field__placeholder fxg-field__floating-placeholder">{{ 'PAGE1.YOUR_COMPANY' | translate }}</span>
+        <mat-error *ngIf="companyInput.hasError('required')">Field must not be empty.</mat-error>
+        <!-- <mat-error *ngIf="!companyInput.hasError('required')">Company is invalid.</mat-error> -->
+      </div>
+
+      <!-- <mat-form-field>
         <input type="text" matInput placeholder="{{ 'PAGE1.YOUR_NAME' | translate }}" [(ngModel)]="user.name"
           name='name' #nameInput="ngModel" required>
         <mat-error *ngIf="nameInput.hasError('required')">Field must not be empty.</mat-error>
@@ -37,7 +79,7 @@
           #companyInput="ngModel" name="company" company required>
         <mat-error *ngIf="companyInput.hasError('required')">Field must not be empty.</mat-error>
         <mat-error *ngIf="!companyInput.hasError('required')">Company is invalid.</mat-error>
-      </mat-form-field>
+      </mat-form-field> -->
 
       <div fxFlex="100%" fxLayoutGap="20px">
 
@@ -48,6 +90,14 @@
         <div fxFlex.gt-sm="50%" fxFlex.ls-md="100%" class="pad-bottom">
           <button fxFlex="45%" type="submit" mat-raised-button color="accent" [disabled]="f.invalid">Submit</button>
         </div>
+
+        <div fxFlex.gt-sm="50%" fxFlex.ls-md="100%" class="pad-bottom">
+          <button fxFlex="45%" type="submit" class="fxg-button fxg-button--orange"
+            [disabled]="f.invalid">Submit</button>
+        </div>
+
+
+
 
       </div>
 

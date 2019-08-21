@@ -29,7 +29,7 @@ export class Page1Component implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-
+    this.userService.saveUser(this.user).subscribe();
   }
 
 }

@@ -17,4 +17,11 @@ export class UserService {
     return this.http.get<User>(`http://localhost:3001/rest/v1/user/${userId}`);
   }
 
+  saveUser(user: User): Observable<any> {
+    console.log(user);
+    return this.http.put<User>(`http://localhost:3001/rest/v1/user/${user.id}`, user);
+    // return this.http.put<User>(`https://jsonplaceholder.typicode.com/posts/${user.id}`, user);
+
+  }
+
 }

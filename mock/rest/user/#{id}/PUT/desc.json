@@ -1,0 +1,39 @@
+{
+  "desc": "Update user",
+  "desc2": "Ok.",
+  "security": [],
+  "protected": false,
+  "status": "",
+  "request": {
+    "uri": {
+      "parameters": [
+        {
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "desc": "name that need to be updated"
+        }
+      ]
+    },
+    "body": {
+      "parameters": [
+        {
+          "name": "body",
+          "required": true,
+          "type": "",
+          "desc": "Updated user object",
+          "schemaType": " "
+        }
+      ]
+    },
+    "schema": {
+      "type": " "
+    }
+  },
+  "response": {
+    "statusCode": "",
+    "schema": {
+      "type": "application/xml, application/json"
+    }
+  }
+}

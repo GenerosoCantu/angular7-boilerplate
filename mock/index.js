@@ -2,6 +2,10 @@
 var mockServer = require('node-mock-server');
 var path = require('path');
 
+// var options = require('./options');
+
+// mockServer(options);
+
 mockServer({
 	'restPath': path.join(__dirname, '/rest'),
 	'uiPath': '/',
@@ -12,11 +16,14 @@ mockServer({
 	'port': 3001,
 	'contentType': 'application/json',
 	'accessControlExposeHeaders': 'X-Total-Count',
-	'accessControlAllowOrigin': '*',
+	'accessControlAllowOrigin': 'http://localhost:4200',
 	'accessControlAllowMethods': 'GET, POST, PUT, OPTIONS, DELETE, PATCH, HEAD',
 	'accessControlAllowHeaders': 'origin, x-requested-with, content-type',
 	'accessControlAllowCredentials': 'true',
-	'headers': {},
+	'headers': {
+		'Global-Custom-Header': 'Global-Custom-Header',
+		'Accept': 'application/json'
+	},
 	'open': true,
 	'dirName': __dirname
 });

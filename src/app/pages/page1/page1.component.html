@@ -14,15 +14,15 @@
       <mat-form-field>
         <input type="text" matInput placeholder="{{ 'PAGE1.YOUR_NAME' | translate }}" [(ngModel)]="user.name"
           name='name' #nameInput="ngModel" required>
-        <mat-error *ngIf="nameInput.hasError('required')">Field must not be empty.</mat-error>
-        <mat-error *ngIf="!nameInput.hasError('required')">Name is invalid.</mat-error>
+        <mat-error *ngIf="nameInput.hasError('required')">{{ 'PAGE1.FIELD_NOT_EMPTY' | translate }}</mat-error>
+        <mat-error *ngIf="!nameInput.hasError('required')">{{ 'PAGE1.FIELD_NAME_INVALID' | translate }}</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <input type="email" matInput placeholder="{{ 'PAGE1.YOUR_EMAIL' | translate }}" [(ngModel)]="user.email"
           name="email" #emailInput="ngModel" email required>
-        <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty.</mat-error>
-        <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid.</mat-error>
+        <mat-error *ngIf="emailInput.hasError('required')">{{ 'PAGE1.FIELD_NOT_EMPTY' | translate }}</mat-error>
+        <mat-error *ngIf="!emailInput.hasError('required')">{{ 'PAGE1.FIELD_EMAIL_INVALID' | translate }}</mat-error>
       </mat-form-field>
 
       <mat-form-field>
@@ -35,18 +35,21 @@
       <mat-form-field>
         <input type="text" matInput placeholder="{{ 'PAGE1.YOUR_COMPANY' | translate }}" [(ngModel)]="user.company"
           #companyInput="ngModel" name="company" company required>
-        <mat-error *ngIf="companyInput.hasError('required')">Field must not be empty.</mat-error>
-        <mat-error *ngIf="!companyInput.hasError('required')">Company is invalid.</mat-error>
+        <mat-error *ngIf="companyInput.hasError('required')">{{ 'PAGE1.FIELD_NOT_EMPTY' | translate }}</mat-error>
+        <mat-error *ngIf="!companyInput.hasError('required')">{{ 'PAGE1.FIELD_COMPANY_INVALID' | translate }}
+        </mat-error>
       </mat-form-field>
 
       <div fxFlex="100%" fxLayoutGap="20px">
 
         <div fxFlex.gt-sm="50%" fxFlex.ls-md="100%" class="pad-bottom">
-          <mat-checkbox ngModel name="agree" required color="primary">Agree to Terms and Conditions.
+          <mat-checkbox ngModel name="agree" required color="primary">
+            {{ 'PAGE1.AGREE_TERMS_CONDITIONS' | translate }}
           </mat-checkbox>
         </div>
         <div fxFlex.gt-sm="50%" fxFlex.ls-md="100%" class="pad-bottom">
-          <button fxFlex="45%" type="submit" mat-raised-button color="accent" [disabled]="f.invalid">Submit</button>
+          <button fxFlex="45%" type="submit" mat-raised-button color="accent"
+            [disabled]="f.invalid">{{ 'GENERAL.SUBMIT' | translate }}</button>
         </div>
 
       </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
 import { User } from '../../models/user.model';
@@ -19,7 +20,9 @@ export class Page1Component implements OnInit {
   };
   maxDate;
 
-  constructor(private userService: UserService) {
+  constructor(
+    private router: Router,
+    private userService: UserService) {
     this.userService.getUser(1).subscribe(user => this.user = user);
   }
 
@@ -29,7 +32,9 @@ export class Page1Component implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.userService.saveUser(this.user).subscribe();
+    this.userService.saveUser(this.user).subscribe(() => {
+      this.router.navigate(['/page2']);
+    });
   }
 
 }

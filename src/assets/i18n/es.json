@@ -1,11 +1,15 @@
 {
-  "HOME": {
-    "TITLE": "Hola Angular con ngx-translate!",
-    "SELECT": "Selecciona lenguaje"
+  "GENERAL": {
+    "SUBMIT": "Enviar"
   },
   "PAGE1": {
     "YOUR_NAME": "Tu nombre",
     "YOUR_EMAIL": "Tu correo",
-    "YOUR_COMPANY": "Tu compania"
+    "YOUR_COMPANY": "Tu compania",
+    "FIELD_NOT_EMPTY": "El campo no debe de estar vacio.",
+    "FIELD_NAME_INVALID": "El Nombre no es valido.",
+    "FIELD_EMAIL_INVALID": "El correo no es valido.",
+    "FIELD_COMPANY_INVALID": "La compania no es valida.",
+    "AGREE_TERMS_CONDITIONS": "Aceptar Terminos y Condiciones."
   }
 }

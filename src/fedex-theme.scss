@@ -1,0 +1,152 @@
+@import '~@angular/material/theming';
+@import 'fedex-pallette.scss';
+
+@function mat-typography-config(
+  $font-family:   'Roboto-Light, Roboto, "Helvetica Neue", sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 300),
+  $display-3:     mat-typography-level(56px, 56px, 400),
+  $display-2:     mat-typography-level(45px, 48px, 400),
+  $display-1:     mat-typography-level(34px, 40px, 400),
+  $headline:      mat-typography-level(24px, 32px, 400),
+  $title:         mat-typography-level(20px, 32px, 500),
+  $subheading-2:  mat-typography-level(16px, 28px, 400),
+  $subheading-1:  mat-typography-level(15px, 24px, 400),
+  $body-2:        mat-typography-level(14px, 24px, 500),
+  $body-1:        mat-typography-level(14px, 20px, 400),
+  $caption:       mat-typography-level(12px, 20px, 400),
+  $button:        mat-typography-level(1.1875rem, 19px, 700),
+  $input:         mat-typography-level(1.25rem, 1.125, 400)
+) {
+
+  $config: (
+    display-4:      $display-4,
+    display-3:      $display-3,
+    display-2:      $display-2,
+    display-1:      $display-1,
+    headline:       $headline,
+    title:          $title,
+    subheading-2:   $subheading-2,
+    subheading-1:   $subheading-1,
+    body-2:         $body-2,
+    body-1:         $body-1,
+    caption:        $caption,
+    button:         $button,
+    input:          $input,
+  );
+
+  @each $key, $level in $config {
+    @if map-get($level, font-family) == null {
+      $new-level: map-merge($level, (font-family: $font-family));
+      $config: map-merge($config, ($key: $new-level));
+    }
+  }
+
+  @return map-merge($config, (font-family: $font-family));
+}  
+
+@include mat-core();
+
+
+$candy-app-primary: mat-palette($mat-fedex-primary);
+$candy-app-accent:  mat-palette($mat-fedex-accent, A200, A100, A400);
+$candy-app-warn:    mat-palette($mat-fedex-warm);
+
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+@include angular-material-theme($candy-app-theme);
+
+
+.mat-flat-button {
+  border-radius: 0 !important;
+  line-height: 60px !important;
+  padding: 10 26px !important;
+}
+
+
+
+// Input Field *********************************
+
+.mat-form-field {
+
+  margin-bottom: 2px !important;
+
+  .mat-form-field-flex {
+    padding-left: 15px;
+    border-left: 3px solid transparent;
+    background: #F2F2F2;
+
+    .mat-form-field-label-wrapper {
+        top: -0.6em;
+    }
+
+  }
+
+  &.mat-focused {
+    .mat-form-field-flex {
+      border-left: 3px solid #4D148C;
+    }
+    .mat-form-field-ripple {
+      opacity: 0 !important;
+    }
+  }
+
+  &.mat-form-field-invalid {
+
+    .mat-form-field-flex {
+      border-color: #DE002E;
+    }
+
+    .mat-form-field-wrapper {
+      padding-bottom: 30px;
+    }
+
+  }
+
+  .mat-form-field-underline {
+    display: none;
+  }
+
+  .mat-form-field-suffix {
+    top: -7px;
+    right: 7px;
+  }
+
+  .mat-form-field-subscript-wrapper {
+    margin-top: 0.54166667em;
+    top: calc(100% - 27px);
+    left: 18px;
+    font-size: 60%;
+    font-weight: bold;
+  }
+
+  .mat-form-field-infix {
+      padding: 0.6375em 0 0.4375em;
+
+      .mat-input-element {
+        height: 24px;
+      }
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+
+  .mat-form-field-label {
+    color: #333;
+    top: 21px;
+    font-size: 14px !important;
+    font-family: 'Roboto-Bold' !important;
+  }
+
+  &.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-15px) scale(0.7142) perspective(100px) translateZ(0.001px);
+    -ms-transform: translateY(-15px) scale(0.7142);
+  }
+
+}
+
+
+
+
+
+

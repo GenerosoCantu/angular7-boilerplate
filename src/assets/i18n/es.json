@@ -5,6 +5,7 @@
   "PAGE1": {
     "YOUR_NAME": "Tu nombre",
     "YOUR_EMAIL": "Tu correo",
+    "YOUR_BIRTHDAY": "Tu fecha de nacimiento",
     "YOUR_COMPANY": "Tu compania",
     "FIELD_NOT_EMPTY": "El campo no debe de estar vacio.",
     "FIELD_NAME_INVALID": "El Nombre no es valido.",

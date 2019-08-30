@@ -26,19 +26,37 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Your birthdate" [(ngModel)]="user.dob" name='dob' required [matDatepicker]="picker"
-          [max]="maxDate">
+        <input matInput placeholder="{{ 'PAGE1.YOUR_BIRTHDAY' | translate }}" [(ngModel)]="user.dob" name='dob' required
+          [matDatepicker]="picker" #dobInput="ngModel" [max]="maxDate">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="!dobInput.hasError('required')">{{ 'PAGE1.FIELD_NOT_EMPTY' | translate }}
+        </mat-error>
+        <mat-error *ngIf="dobInput.hasError('required')">{{ 'PAGE1.FIELD_DOB_INVALID' | translate }}
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <input type="text" matInput placeholder="{{ 'PAGE1.YOUR_COMPANY' | translate }}" [(ngModel)]="user.company"
-          #companyInput="ngModel" name="company" company required>
+          #companyInput="ngModel" name="company" company>
         <mat-error *ngIf="companyInput.hasError('required')">{{ 'PAGE1.FIELD_NOT_EMPTY' | translate }}</mat-error>
         <mat-error *ngIf="!companyInput.hasError('required')">{{ 'PAGE1.FIELD_COMPANY_INVALID' | translate }}
         </mat-error>
       </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>LANGUAGE</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let language of languages" [value]="language.value">
+            {{language.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Option 1</mat-radio-button>
+        <mat-radio-button value="2">Option 2</mat-radio-button>
+      </mat-radio-group>
 
       <div fxFlex="100%" fxLayoutGap="20px">
 
@@ -48,7 +66,7 @@
           </mat-checkbox>
         </div>
         <div fxFlex.gt-sm="50%" fxFlex.ls-md="100%" class="pad-bottom">
-          <button fxFlex="45%" type="submit" mat-raised-button color="accent"
+          <button fxFlex="45%" type="submit" mat-flat-button color="accent"
             [disabled]="f.invalid">{{ 'GENERAL.SUBMIT' | translate }}</button>
         </div>
 

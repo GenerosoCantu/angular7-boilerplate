@@ -3,11 +3,13 @@
     "SUBMIT": "Submit"
   },
   "PAGE1": {
-    "YOUR_NAME": "Your name",
-    "YOUR_EMAIL": "Your email",
-    "YOUR_COMPANY": "Your company",
+    "YOUR_NAME": "YOUR NAME",
+    "YOUR_EMAIL": "YOUR EMAIL",
+    "YOUR_BIRTHDAY": "YOUR BIRTHDAY",
+    "YOUR_COMPANY": "YOUR COMPANY",
     "FIELD_NOT_EMPTY": "Field must not be empty",
     "FIELD_NAME_INVALID": "Name is invalid.",
+    "FIELD_DOB_INVALID": "Birthday is invalid",
     "FIELD_EMAIL_INVALID": "E-Mail is invalid.",
     "FIELD_COMPANY_INVALID": "Company is invalid.",
     "AGREE_TERMS_CONDITIONS": "Agree to Terms and Conditions."

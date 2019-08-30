@@ -11,6 +11,9 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./page1.component.css']
 })
 export class Page1Component implements OnInit {
+
+  languages;
+
   user: User = {
     id: null,
     name: '',
@@ -24,6 +27,25 @@ export class Page1Component implements OnInit {
     private router: Router,
     private userService: UserService) {
     this.userService.getUser(1).subscribe(user => this.user = user);
+
+    this.languages = [
+      {
+        value: 'en',
+        viewValue: 'English'
+      },
+      {
+        value: 'es',
+        viewValue: 'Spanish'
+      },
+      {
+        value: 'fr',
+        viewValue: 'French'
+      },
+      {
+        value: 'ru',
+        viewValue: 'Russian'
+      }
+    ]
   }
 
   ngOnInit() {

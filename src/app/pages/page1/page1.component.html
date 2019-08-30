@@ -26,8 +26,8 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="{{ 'PAGE1.YOUR_BIRTHDAY' | translate }}" [(ngModel)]="user.dob" name='dob' required [matDatepicker]="picker" #dobInput="ngModel"
-          [max]="maxDate">
+        <input matInput placeholder="{{ 'PAGE1.YOUR_BIRTHDAY' | translate }}" [(ngModel)]="user.dob" name='dob' required
+          [matDatepicker]="picker" #dobInput="ngModel" [max]="maxDate">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
         <mat-error *ngIf="!dobInput.hasError('required')">{{ 'PAGE1.FIELD_NOT_EMPTY' | translate }}
@@ -43,6 +43,20 @@
         <mat-error *ngIf="!companyInput.hasError('required')">{{ 'PAGE1.FIELD_COMPANY_INVALID' | translate }}
         </mat-error>
       </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>LANGUAGE</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let language of languages" [value]="language.value">
+            {{language.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Option 1</mat-radio-button>
+        <mat-radio-button value="2">Option 2</mat-radio-button>
+      </mat-radio-group>
 
       <div fxFlex="100%" fxLayoutGap="20px">
 

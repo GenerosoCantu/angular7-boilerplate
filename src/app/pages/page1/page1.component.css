@@ -23,3 +23,11 @@ button {
 .pad-bottom {
   padding-bottom: 20px;
 }
+
+mat-radio-group {
+  margin-top: 20px;
+}
+
+mat-radio-button {
+  margin-right: 30px;
+}

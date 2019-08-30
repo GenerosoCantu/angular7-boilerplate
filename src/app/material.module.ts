@@ -22,7 +22,8 @@ import {
   MatSortModule,
   MatPaginatorModule,
   MatSnackBarModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatRadioModule
 } from '@angular/material';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -58,7 +59,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatSortModule,
     MatPaginatorModule,
     MatSnackBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatRadioModule
   ],
   exports: [
     TranslateModule,
@@ -81,7 +83,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatSortModule,
     MatPaginatorModule,
     MatSnackBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatRadioModule
   ]
 })
 export class MaterialModule { }

@@ -167,7 +167,8 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
     border: 0 !important;
     width: 22px !important;
     height: 11px !important;
-    background: url("./assets/downArrow.png") !important;
+    background: url("./assets/downArrowGray.svg") !important;
+    transform: rotate(180deg);
         
     position: relative;
     top: -9px;
@@ -185,6 +186,8 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 
   .mat-option-text {
     font-size: .7em;
+    padding-top: 3px;
+    line-height: 2em;
   }
 
   .mat-optgroup-label, .mat-option {
@@ -231,3 +234,64 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 .mat-radio-checked .mat-radio-inner-circle {
     transform: scale(.6) !important;
 }
+
+
+// Accordion *********************************
+
+.mat-expansion-panel {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+mat-expansion-panel-header  {
+  height: 80px !important;
+  min-height: 80px !important;
+  background: #FAFAFA !important;
+  border-top: 1px #E3E3E3 solid;
+  border-bottom: 1px #E3E3E3 solid !important;
+
+  &:after {
+    height: 80px !important;
+  }
+
+  &.mat-expanded {
+    background: #4D148C !important;
+
+    .mat-expansion-panel-header-title {
+      color: #fff;
+    }
+
+    .mat-expansion-indicator::after {
+      background: url("./assets/downArrowWhite.svg") no-repeat !important;
+      transform: rotate(0deg) !important;
+    }
+  }
+
+  .mat-expansion-indicator::after {
+    background: url("./assets/downArrowGray.svg") no-repeat !important;
+    transform: rotate(0deg) !important;
+    height: 11px;
+    width: 22px;
+    border-width: 0 !important;
+    padding: 0;
+  }
+
+  .mat-expansion-panel-header-title {
+    font-size: 20px;
+    font-family: 'Roboto-Light';
+    color: #646464;
+  }
+
+  .mat-expansion-indicator::after {
+    padding: 0px !important;
+  }
+
+  .mat-expansion-panel-content {
+    background: #fff;
+  }
+
+}
+
+
+
+
